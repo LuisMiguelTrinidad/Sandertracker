@@ -1,0 +1,20 @@
+.material-icons {
+    color: rgb(24, 27, 39);
+    transform: translateY(6px);
+}
+
+header > *{
+    font-size: 24px;
+    padding: 30px;
+}
+header{
+    background-color: rgb(7, 8, 12);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+h1{
+    color: aliceblue;
+    margin: 0px;
+    margin: 0px;
+}
