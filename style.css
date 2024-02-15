@@ -20,12 +20,24 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     position: fixed;
     width: 100%;
 }
+
+header > *{
+    padding: 30px;
+    
+}
+
 #izq, #dcha{
     flex: 1;
+}
+
+#dcha{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    flex-wrap: nowrap;
 }
 
 #icono{
@@ -35,16 +47,13 @@ header{
     padding: 15px 0px 0px 15px;
 }
 
-header > *{
-    padding: 30px;
-    flex-wrap: nowrap;
-}
 #buscador{
     font-size: 2rem;
     padding: 15px 10px 10px 15px;
     margin-right: 30px;
     border-radius: 20px;
     background-color: rgb(208, 212, 216);
+    width: 300px;
 }
 main{
     background-color: rgb(25, 22, 38);
@@ -61,8 +70,12 @@ h2{
     margin: 0px;
     text-align: center;
 }
+h3{
+    display: inline;
+    font-size: 2rem;
+}
+
 .accordeonhead{
-    display: flex;
     border: 3px solid rgb(128, 128, 128);
     padding: 20px 30px 20px 30px;
     margin-bottom: 10px;
@@ -71,4 +84,15 @@ h2{
     color: rgb(207, 164, 84);
     transition: 0.5s;
     border-color: rgb(207, 164, 84);
+}
+
+.accordeoncontent{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px;
+}
+
+.elemento img {
+    width: 100%;
+    height: auto;
 }
