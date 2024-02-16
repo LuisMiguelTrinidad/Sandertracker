@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
         i.firstElementChild.addEventListener("click", j => {
             if(i.lastElementChild.style.display!="grid"){
                 i.lastElementChild.style.display = "grid";
+                i.firstElementChild.firstElementChild.textContent = "expand_less"
             } else {
                 i.lastElementChild.style.display = "none";
+                i.firstElementChild.firstElementChild.textContent = "expand_more"
             }
         })
     })
