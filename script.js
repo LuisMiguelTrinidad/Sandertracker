@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let titulos = [...document.getElementsByClassName('titulo')];
-    titulos.forEach(k => console.log(k.innerHTML));
+    console.log("hola")
+    document.querySelectorAll('.accordeonhead').forEach(i => {
+        console.log(i)
+        i.firstElementChild.addEventListener("click", j => {
+            if(i.lastElementChild.style.display!="grid"){
+                i.lastElementChild.style.display = "grid";
+            } else {
+                i.lastElementChild.style.display = "none";
+            }
+        })
+    })
+
 });
+
+

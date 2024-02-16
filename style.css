@@ -54,6 +54,7 @@ header > *{
     transform: translateY(0.7rem);
     font-size: 3rem;
     color: rgba(208, 212, 216, 0.7);
+    cursor: pointer;
 }
 
 main{
@@ -77,8 +78,13 @@ h3{
 
 .accordeonhead{
     border: 3px solid rgb(128, 128, 128);
-    padding: 20px 30px 20px 30px;
+    padding: 0px;
     margin-bottom: 10px;
+}
+
+.titulo{
+    padding: 20px 30px 30px 30px;
+    cursor: pointer;
 }
 
 .accordeonhead:hover, .barracarga:hover, .elemento:hover{
@@ -89,9 +95,10 @@ h3{
 }
 
 .accordeoncontent{
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 10px;
+    padding: 0px 30px 30px 30px
 }
 
 .elemento{
@@ -111,6 +118,10 @@ h3{
     text-align: center;
     margin-bottom: -10px;
 
+}
+
+.parteabajofotos input{
+    transform: translateY(-0.15rem);
 }
 
 .progresstracker{
