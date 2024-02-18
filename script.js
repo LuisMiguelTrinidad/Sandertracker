@@ -17,17 +17,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         //Para no poder poner mas paginas de las que hay en total
         if(Number(i.value) > Number(i.parentElement.children[2].value)){
-            console.log("Hola")
             i.value = i.parentElement.children[2].value;
         }
-        //Paginas leidas totales
         let paginastotalescosmere = Array.from(document.querySelectorAll(".paginastotales"))
             .reduce((x, y) => x + Number(y.value), 0);
         let paginasleidascosmere = Array.from(document.querySelectorAll(".paginasleidas"))
             .reduce((x, y) => x + Number(y.value), 0);
-        document.getElementById("progresototaldentro").innerHTML=`<span id="resultado">${paginasleidascosmere}/${paginastotalescosmere}</span>`
+        let barracosmereinterior = document.getElementById("progresototaldentro");
+        let barracosmereexterior = document.getElementById("progresototalfuera");
+        
         document.getElementById("porcleido").innerHTML=`${Math.floor(1000*paginasleidascosmere/paginastotalescosmere)/10}%`;
-        document.getElementById("progresototaldentro").style.width=`${Math.floor(1000*paginasleidascosmere/paginastotalescosmere)/10}%`
+        barracosmereinterior.style.width=`${Math.max(barracosmereexterior.offsetWidth * paginasleidascosmere/paginastotalescosmere, 36)}px`;
+        barracosmereinterior.innerHTML=`<span id="resultado">${paginasleidascosmere}/${paginastotalescosmere}</span>`;
         
         //Paginas leidas por saga
         let paginastotalessaga = Array.from(i.parentElement.parentElement.parentElement
@@ -36,20 +37,21 @@ document.addEventListener("DOMContentLoaded", function() {
         let paginasleidassaga = Array.from(i.parentElement.parentElement.parentElement
             .querySelectorAll(".paginasleidas"))
             .reduce((x, y) => x + Number(y.value), 0);
-        i.parentElement.parentElement.parentElement.parentElement.nextElementSibling
-            .querySelector(".progresosagadentro")
-            .style.width=`${Math.floor(1000*paginasleidassaga/paginastotalessaga)/10}%`;
-        i.parentElement.parentElement.parentElement.parentElement.nextElementSibling
-            .querySelector(".progresosagadentro")
-            .innerHTML=`<span id="resultado">${paginasleidassaga}/${paginastotalessaga}</span>`;
+        let barrasagainterior = i.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0];
+        let barrasagaexterior = i.parentElement.parentElement.parentElement.parentElement.nextElementSibling
+            
+        barrasagainterior.style.width=`${Math.max(barrasagaexterior.offsetWidth * paginasleidassaga/paginastotalessaga, 36)}px`;
+        barrasagainterior.innerHTML=`<span id="resultado">${paginasleidassaga}/${paginastotalessaga}</span>`;
                     
         //Paginas leidas por libro
-        let paginasleidaslibro =i.value;
+        let paginasleidaslibro = i.value;
         let paginastotaleslibro = i.parentElement.children[2].value;
-        console.log(paginastotaleslibro, paginasleidaslibro)
-        i.parentElement.nextElementSibling.children[0]
-            .style.width=`${Math.floor(1000*paginasleidaslibro/paginastotaleslibro)/10}%`;
+        let barralibrointerior =  i.parentElement.nextElementSibling.children[0]
+        let barralibroexterior =  i.parentElement.nextElementSibling
+        barralibrointerior.style.width=`${Math.max(barralibroexterior.offsetWidth * paginasleidaslibro/paginastotaleslibro, 24)}px`;
 
+
+            
         i.addEventListener("blur", j => {
             //Para no poder poner mas paginas de las que hay en total
             if(Number(j.target.value) > Number(j.target.parentElement.children[2].value)){
@@ -61,9 +63,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 .reduce((x, y) => x + Number(y.value), 0);
             let paginasleidascosmere = Array.from(document.querySelectorAll(".paginasleidas"))
                 .reduce((x, y) => x + Number(y.value), 0);
-            document.getElementById("progresototaldentro").innerHTML=`<span id="resultado">${paginasleidascosmere}/${paginastotalescosmere}</span>`
+            let barracosmereinterior = document.getElementById("progresototaldentro");
+            let barracosmereexterior = document.getElementById("progresototalfuera");
+            
             document.getElementById("porcleido").innerHTML=`${Math.floor(1000*paginasleidascosmere/paginastotalescosmere)/10}%`;
-            document.getElementById("progresototaldentro").style.width=`${Math.floor(1000*paginasleidascosmere/paginastotalescosmere)/10}%`
+            barracosmereinterior.style.width=`${Math.max(barracosmereexterior.offsetWidth * paginasleidascosmere/paginastotalescosmere, 36)}px`;
+            barracosmereinterior.innerHTML=`<span id="resultado">${paginasleidascosmere}/${paginastotalescosmere}</span>`;
 
             //Paginas leidas por saga
             let paginastotalessaga = Array.from(j.target.parentElement.parentElement.parentElement
@@ -72,19 +77,19 @@ document.addEventListener("DOMContentLoaded", function() {
             let paginasleidassaga = Array.from(j.target.parentElement.parentElement.parentElement
                 .querySelectorAll(".paginasleidas"))
                 .reduce((x, y) => x + Number(y.value), 0);
-            j.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling
-                .querySelector(".progresosagadentro")
-                .style.width=`${Math.floor(1000*paginasleidassaga/paginastotalessaga)/10}%`;
-            j.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling
-                .querySelector(".progresosagadentro")
-                .innerHTML=`<span id="resultado">${paginasleidassaga}/${paginastotalessaga}</span>`;
+            let barrasagainterior = j.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0];
+            let barrasagaexterior = j.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling
+                
+            barrasagainterior.style.width=`${Math.max(barrasagaexterior.offsetWidth * paginasleidassaga/paginastotalessaga, 36)}px`;
+            barrasagainterior.innerHTML=`<span id="resultado">${paginasleidassaga}/${paginastotalessaga}</span>`;
             
             //Paginas leidas por libro
             let paginasleidaslibro =j.target.value;
             let paginastotaleslibro = j.target.parentElement.children[2].value;
-            console.log(paginastotaleslibro, paginasleidaslibro)
-            j.target.parentElement.nextElementSibling.children[0]
-                .style.width=`${Math.floor(1000*paginasleidaslibro/paginastotaleslibro)/10}%`;
+            let barralibrointerior =  j.target.parentElement.nextElementSibling.children[0]
+            let barralibroexterior =  j.target.parentElement.nextElementSibling
+            barralibrointerior.style.width=`${Math.max(barralibroexterior.offsetWidth * paginasleidaslibro/paginastotaleslibro, 24)}px`;
         })
     })
 });
+
