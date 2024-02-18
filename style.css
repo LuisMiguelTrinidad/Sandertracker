@@ -104,7 +104,7 @@ Acordeon
     border: 3px solid rgb(128, 128, 128);
     padding: 0px;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .accordeonhead{
@@ -165,8 +165,11 @@ Acordeon
     color: rgb(208, 212, 216);
     font-size: 1.5rem;
     width: 54px;
-    border-radius: 15px;
+    border-radius: 15px;  
     border: none;
+}
+.paginasleidas{
+    background-color: rgba(128, 128, 128, 0.25);
 }
 .paginasleidas{
     text-align: right;
