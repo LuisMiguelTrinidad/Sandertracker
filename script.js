@@ -82,10 +82,42 @@ document.addEventListener("DOMContentLoaded", function() {
 			let barralibrointerior =  i.parentElement.nextElementSibling.children[0]
 			let barralibroexterior =  i.parentElement.nextElementSibling
 			barralibrointerior.style.width=`${Math.max(
-				barralibroexterior.offsetWidth * paginasleidaslibro/paginastotaleslibro - 3, 24
+				barralibroexterior.offsetWidth * paginasleidaslibro/paginastotaleslibro - 6, 24
 			)}px`;
 		}
+
+		let timer;
             
+		function startTimer() {
+			timer = setTimeout(() => {
+				if (Number(i.value) > Number(i.parentElement.children[2].value)) {
+					i.value = i.parentElement.children[2].value;
+				}
+				if (isNaN(Number(i.value))) {
+					i.value = 0;
+				}
+				generabarrasaga();
+				generabarralibro();
+				generabarracosmere();
+			}, 500);
+		}
+		function resetTimer() {
+			clearTimeout(timer);
+		}
+
+		i.addEventListener("keydown", function(event) {
+			if (event.key !== " ") {
+				if (!timer) {
+					startTimer();
+				} else {
+					resetTimer();
+					startTimer(); 
+				}
+			} else {
+				resetTimer(); 
+			}
+		});
+
         i.addEventListener("blur", j => {
             //Para no poder poner mas paginas de las que hay en total
             if(Number(i.value) > Number(i.parentElement.children[2].value)){
@@ -100,7 +132,5 @@ document.addEventListener("DOMContentLoaded", function() {
 			generabarracosmere();
         })
     })
-	
-
 });
 

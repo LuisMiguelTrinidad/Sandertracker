@@ -221,6 +221,7 @@ barras
     border: 3px solid rgb(128, 128, 128);
     display: flex;
     justify-content: right;
+    overflow: hidden;
 }
 
 #progresototaldentro, .progresosagadentro{
@@ -229,6 +230,7 @@ barras
     background: radial-gradient(circle at left center, transparent 18px, #191726 calc(18px - 100%));
     border-radius: 0px 100px 100px 0px;
     position: relative;
+
 }
 
 .progresoindividualfuera{
@@ -236,10 +238,14 @@ barras
     height: 24px;
     background-color: rgba(129, 95, 95, 0.247);
     border-radius: 100px;
+    outline: 3px;
+    box-sizing: border-box;
+    overflow: hidden;
+
 }
 
 .progresoindividualdentro{
-    width: 100%;
+    width: 18px;
     height: 100%;
     color: white;
     background-color: rgb(207, 164, 84);
