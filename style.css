@@ -30,7 +30,7 @@ header{
 
 main{
     background-color: rgb(25, 22, 38);
-    padding: 168px 30px 30px 30px;
+    padding: 158px 30px 30px 30px;
 }
 h1{
     font-size: 3em;
@@ -54,6 +54,10 @@ h3{
     font-family: "Anta";
     text-align: center;
     margin-bottom: 10px;
+}
+
+.material-icons{
+    font-size: 2rem;
 }
 
 /*
