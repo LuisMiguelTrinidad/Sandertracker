@@ -12,7 +12,6 @@ header{
     background-color: rgba(7, 8, 12, 0.7);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -28,7 +27,6 @@ header > *{
 
 #icono{
     flex: 0;
-    margin: 0 auto;
     filter: invert(100%);
     padding: 15px 0px 0px 15px;
 }
@@ -128,12 +126,62 @@ Acordeon
     }
     .titulo {
         font-size: 1rem !important;
-        padding: 0px 10px !important;
+        padding: 0px 5px !important;
 
     }
     .elemento img {
-        width: calc(100% - 20px) !important;
-        margin: 0px 10px !important;
+        width: calc(100% - 10px) !important;
+        margin: 0px 5px !important;
+    }
+    .parteabajofotos input{                                                             
+        font-size: 1rem;
+        width: 36px;
+    }
+    .accordeonhead{
+        padding: 20px 10px;
+        cursor: pointer;
+    }
+
+    .accordeoncontent{
+        display: none;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        padding: 0px 10px 30px;
+    }
+}
+
+@media screen and (max-width: 950px) and (min-width: 551px){
+    .accordeoncontent {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }   
+    #dcha{
+        display: none;
+    }
+    #icono{
+        flex: 1;
+        flex-grow: 0;
+        
+    }
+    .titulo {
+        font-size: 1.2rem !important;
+        padding: 0px 15px !important;
+
+    }
+    .elemento img {
+        width: calc(100% - 30px) !important;
+        margin: 0px 15px !important;
+    }
+    
+    .accordeonhead{
+        padding: 20px 15px;
+        cursor: pointer;
+    }
+
+    .accordeoncontent{
+        display: none;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 0px 15px 30px;
     }
 }
 
@@ -153,14 +201,12 @@ Acordeon
     margin-top: 15px;    
     background-color: rgba(0, 0, 0, 0.247);
     border-radius: 15px;
-    display: grid;
-    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
     transition: 0.5s;
 }
 
 .titulo{
-    display: flex;
-    justify-content: center;
     text-align: center;
     font-size: 1.4rem;
     font-family: "Anta";
@@ -168,6 +214,7 @@ Acordeon
     padding: 0px 25px;
     margin-top: 25px;
     height: auto;
+    flex: 1;
 }
 
 .elemento img {
@@ -178,32 +225,35 @@ Acordeon
 }
 
 .parteabajofotos{
-    text-align: center;
-    margin-bottom: 0px;
+    margin: 10px 0px;
+    padding: 0px 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-flow: row;
+    justify-content: center;
 }
 
-.parteabajofotos input{
-    transform: translateY(-0.2rem);
-}
+
 
 .paginasleidas, .paginastotales{
     background-color: rgba(208, 212, 216, 0);
     font-family: "Anta";
     color: rgb(208, 212, 216);
     font-size: 1.5rem;
-    width: 54px;
     border-radius: 15px;  
+    max-width: 54px;
     border: none;
+    height: 2rem;
+}
 
+.parteabajofotos h2{
+    transform: translateY(1.2rem);
+    margin-top: -20px;
 }
-.paginasleidas{
-    background-color: rgba(128, 128, 128, 0.25);
-}
+
 .paginasleidas{
     text-align: right;
-}
-.paginastotales{
-    text-align: left;
+    background-color: rgba(128, 128, 128, 0.5);
 }
 
 /*
