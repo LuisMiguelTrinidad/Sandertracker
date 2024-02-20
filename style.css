@@ -69,6 +69,8 @@ h2{
     display: inline;
     text-align: center;
     font-family: "Anta";
+    padding: 0;
+    margin: 0;
 }
 h3{
     display: inline;
@@ -85,7 +87,7 @@ titulo
 */
 
 #porcleido{
-    font-size: 8rem;
+    font-size: 15rem;
     text-align: center;
     font-family: "Anta";
     font-weight: bold;
@@ -111,14 +113,19 @@ Acordeon
 
 .accordeoncontent{
     display: none;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 10px;
     padding: 0px 30px 30px;
 }
 
 @media screen and (max-width: 550px) {
+    main{
+        background-color: rgb(25, 22, 38);
+        padding: 128px 10px 10px 10px;
+    }
+
     .accordeoncontent {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     }   
     #dcha, #icono{
         display: none;
@@ -129,58 +136,70 @@ Acordeon
 
     }
     .accordeoncontent .elemento img {
-        width: calc(100% - 10px);
-        margin: 0px 5px;
+        width: calc(100% - 20px);
+        margin: 0px 10px;
     }
-    .parteabajofotos input{                                                             
-        font-size: 1rem;
-        width: 36px;
-    }
+    
     .accordeonhead{
         padding: 20px 10px;
         cursor: pointer;
     }
 
-    .accordeoncontent{
-        display: none;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 10px;
-        padding: 0px 10px 10px;
+	.elemento .parteabajofotos{
+		margin: 10px 10px;
+		width: calc(100% - 20px);
+	}
+	
+	.elemento .paginasleidas, .elemento .paginastotales{
+		font-size: 1rem;
+		width: calc(50% - 10px - 0.5rem);
+        height: 1.25rem;
+        padding-inline: 5px;
+		
+	}
+	.elemento .parteabajofotos h2{
+		display: block;
+		width: 1rem;
+		font-size: 1rem;
+	}
+    #porcleido{
+        font-size: 5rem;
     }
 }
 
 @media screen and (max-width: 950px) and (min-width: 551px){
+    main{
+        background-color: rgb(25, 22, 38);
+        padding: 138px 20px 20px;
+    }
+
     .accordeoncontent {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }   
     #dcha{
         display: none;
     }
+    /* Arreglar */
     #icono{
         flex: 1;
         flex-grow: 0;
         
     }
+
     .elemento .titulo {
-        font-size: 1.2rem;
-        padding: 0px 15px;
+        font-size: 1.5rem;
+        padding: 0px 10px;
 
     }
+
     .accordeoncontent .elemento img {
         width: calc(100% - 30px);
         margin: 0px 15px;
     }
-    
+
     .accordeonhead{
         padding: 20px 15px;
         cursor: pointer;
-    }
-
-    .accordeoncontent{
-        display: none;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 10px;
-        padding: 0px 20px 20px;
     }
 
 	.elemento .parteabajofotos{
@@ -188,27 +207,24 @@ Acordeon
 		width: calc(100% - 30px);
 	}
 	
-	.paginasleidas, .paginastotales{
-		background-color: rgba(208, 212, 216, 0);
-		color: rgb(208, 212, 216);
-		font-family: "Anta";
-		font-size: 1.5rem;
-		width: calc(50% - 10px - 2rem);
-		height: 2rem;
-		border: none;
-		border-radius: 15px;
-		padding-inline: 10px;
-		flex-grow: 1;
+	.elemento .paginasleidas, .elemento .paginastotales{
+		font-size: 1.25rem;
+		width: calc(50% - 10px - 0.75rem);
+        height: 1.5rem;
+        padding-inline: 5px;
 		
 	}
 	.parteabajofotos h2{
 		display: block;
-		width: 2rem;
-		font-size: 2rem;
+		width: 1.25rem;
+		font-size: 1.5rem;
 		padding: 0;
 		margin: 0;
-		display: block;
 	}
+
+    #porcleido{
+        font-size: 10em;
+    }
 }
 
 .accordeon:hover, .barracarga:hover, .elemento img:hover{
@@ -262,7 +278,7 @@ Acordeon
 	color: rgb(208, 212, 216);
     font-family: "Anta";
     font-size: 1.5rem;
-	width: calc(50% - 10px - 2rem);
+	width: calc(50% - 10px - 1rem);
     height: 2rem;
 	border: none;
     border-radius: 15px;
