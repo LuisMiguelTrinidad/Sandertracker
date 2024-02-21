@@ -11,6 +11,37 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
+	document.querySelectorAll(".paginasleidas").forEach(i => {
+		adjudicaCookies();
+
+		function getCookie(nombre) {
+			// Obtener todas las cookies del documento
+			var cookies = document.cookie.split(';');
+			
+			// Iterar sobre las cookies para encontrar la que coincide con el nombre
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = cookies[i];
+				// Eliminar espacios en blanco al principio y al final de la cookie
+				while (cookie.charAt(0) === ' ') {
+					cookie = cookie.substring(1);
+				}
+				// Verificar si la cookie comienza con el nombre buscado
+				if (cookie.indexOf(nombre + '=') === 0) {
+					// Devolver el valor de la cookie
+					return cookie.substring(nombre.length + 1, cookie.length);
+				}
+			}
+			// Si no se encuentra la cookie, devolver null
+			return "";
+		}
+
+		function adjudicaCookies(){
+			let leidasbarratotal = getCookie(i.parentElement.previousElementSibling.previousElementSibling.textContent);
+			i.value = leidasbarratotal===""?0:leidasbarratotal.split("/")[0];
+			i.parentElement.children[2].value = leidasbarratotal===""?i.parentElement.children[2].value:leidasbarratotal.split("/")[1];
+		}
+	});
+
     document.querySelectorAll(".paginasleidas").forEach(i => {
 
 		//Para no poder poner mas paginas de las que hay en total
@@ -18,9 +49,14 @@ document.addEventListener("DOMContentLoaded", function() {
 			i.value = i.parentElement.children[2].value;
 		}		
 
-		adjudicaCookies();
-		generabarrasaga();
+		function generacookie(){
+			let nombreInput = i.parentElement.previousElementSibling.previousElementSibling.textContent
+			let leido = i.value
+			let actual = i.parentElement.children[2].value;
+			document.cookie = nombreInput + "=" + leido + "/" + actual + "; expires=Thu, 31 Dec 2026 12:00:00 UTC; path=/";
+		}
 		generabarralibro();
+		generabarrasaga();
 		generabarracosmere();
 
 		function generabarracosmere(){
@@ -80,46 +116,21 @@ document.addEventListener("DOMContentLoaded", function() {
 			//Paginas leidas por libro
 			let paginasleidaslibro = i.value;
 			let paginastotaleslibro = i.parentElement.children[2].value;
-			let barralibrointerior =  i.parentElement.nextElementSibling.children[0]
-			let barralibroexterior =  i.parentElement.nextElementSibling
-			barralibrointerior.style.width=`${Math.max(
-				barralibroexterior.offsetWidth * paginasleidaslibro/paginastotaleslibro - 6, 24
-			)}px`;
-		}
-
-		function generacookie(){
-			let nombreInput = i.parentElement.previousElementSibling.previousElementSibling.textContent
-			let leido = i.value
-			let actual = i.parentElement.children[2].value;
-			document.cookie = nombreInput + "=" + leido + "/" + actual + "; expires=Thu, 31 Dec 2026 12:00:00 UTC; path=/";
-		}
-
-		function getCookie(nombre) {
-			// Obtener todas las cookies del documento
-			var cookies = document.cookie.split(';');
-			
-			// Iterar sobre las cookies para encontrar la que coincide con el nombre
-			for (var i = 0; i < cookies.length; i++) {
-				var cookie = cookies[i];
-				// Eliminar espacios en blanco al principio y al final de la cookie
-				while (cookie.charAt(0) === ' ') {
-					cookie = cookie.substring(1);
-				}
-				// Verificar si la cookie comienza con el nombre buscado
-				if (cookie.indexOf(nombre + '=') === 0) {
-					// Devolver el valor de la cookie
-					return cookie.substring(nombre.length + 1, cookie.length);
-				}
+			let barralibrointerior =  i.parentElement.nextElementSibling.children[0];
+			let porcentajeinicial;
+			if(window.screen.width < 550){
+				porcentajeinicial = 12.5;
+			} else if (window.screen.width < 950){
+				porcentajeinicial = 10;
+			} else {
+				porcentajeinicial = 7.5;
 			}
-			// Si no se encuentra la cookie, devolver null
-			return "";
+			barralibrointerior.style.width=`${Math.max(
+				100 * paginasleidaslibro/paginastotaleslibro, porcentajeinicial
+			)}%`;
 		}
 
-		function adjudicaCookies(){
-			let leidasbarratotal = getCookie(i.parentElement.previousElementSibling.previousElementSibling.textContent);
-			i.value = leidasbarratotal===""?0:leidasbarratotal.split("/")[0];
-			i.parentElement.children[2].value = leidasbarratotal===""?i.parentElement.children[2].value:leidasbarratotal.split("/")[1];
-		}
+
 
 		let timer;
             
