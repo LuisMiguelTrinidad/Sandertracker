@@ -1,282 +1,279 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap');
-body{
-    font-size: 16px;
-    margin: 0;
-    color: rgb(208, 212, 216);
-    font-family: "Roboto";
-    background-color: rgb(7, 8, 12);;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap");
+body {
+	font-size: 16px;
+	margin: 0;
+	color: rgb(208, 212, 216);
+	font-family: "Anta";
+	background-color: rgb(7, 8, 12);
 }
 
-header{
-    background-color: rgba(7, 8, 12, 0.7);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+header {
+	background-color: rgba(7, 8, 12, 0.7);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
 }
 
-#izq{
-    padding: 30px;
+#izq {
+	padding: 30px;
 }
 
-#icono{
-    filter: invert(100%);
-    padding: 15px 0px;
+#icono {
+	filter: invert(100%);
+	padding: 15px 0px;
 }
 
-
-main{
-    background-color: rgb(25, 22, 38);
-    padding: 158px 30px 30px 30px;
+main {
+	background-color: rgb(25, 22, 38);
+	padding: 158px 30px 30px 30px;
 }
-h1{
-    font-size: 3em;
-    margin: 0px;
-    padding: 0px;
-    font-family: "Anta";
+h1 {
+	font-size: 3em;
+	margin: 0px;
+	padding: 0px;
 }
-h2{
-    font-size: 2rem;
-    display: inline;
-    text-align: center;
-    font-family: "Anta";
-    padding: 0;
-    margin: 0;
+h2 {
+	font-size: 2rem;
+	display: inline;
+	text-align: center;
+	padding: 0;
+	margin: 0;
 }
-h3{
-    display: inline;
-    font-size: 1rem;
-    text-wrap: nowrap;
-    white-space: nowrap;
-    font-family: "Anta";
-    text-align: center;
-    margin-bottom: 10px;
+h3 {
+	display: inline;
+	font-size: 1rem;
+	text-wrap: nowrap;
+	white-space: nowrap;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
-.material-icons{
-    font-size: 2rem;
+.material-icons {
+	font-size: 2rem;
 }
 
 /*
 titulo
 */
 
-#porcleido{
-    font-size: 18vw;
-    text-align: center;
-    font-family: "Anta";
-    font-weight: bold;
-    text-shadow: 5px 5px 0px rgb(83, 83, 83), 4px 4px 0px rgb(83, 83, 83), 
-    3px 3px 0px rgb(83, 83, 83), 2px 2px 0px rgb(83, 83, 83), 1px 1px 0px rgb(83, 83, 83);
+#porcleido {
+	font-size: 18vw;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 5px 5px 0px rgb(83, 83, 83), 4px 4px 0px rgb(83, 83, 83), 3px 3px 0px rgb(83, 83, 83),
+		2px 2px 0px rgb(83, 83, 83), 1px 1px 0px rgb(83, 83, 83);
 }
 
 /*
 Acordeon
 */
 
-.accordeon{
-    border: 3px solid rgb(128, 128, 128);
-    margin-bottom: 10px;
-    margin-top: 30px;
+.accordeon {
+	border: 3px solid rgb(128, 128, 128);
+	margin-bottom: 10px;
+	margin-top: 30px;
 }
 
-.accordeonhead{
-    padding: 20px 30px 30px 30px;
-    cursor: pointer;
+.accordeonhead {
+	padding: 20px 30px 30px 30px;
+	cursor: pointer;
 }
 
-.accordeoncontent{
-    display: none;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 10px;
-    padding: 0px 30px 30px;
+.accordeoncontent {
+	display: none;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 10px;
+	padding: 0px 30px 30px;
 }
 
 @media screen and (max-width: 550px) {
-    main{
-        background-color: rgb(25, 22, 38);
-        padding: 128px 10px 10px 10px;
-    }
+	main {
+		background-color: rgb(25, 22, 38);
+		padding: 128px 10px 10px 10px;
+	}
 
-    .accordeonhead{
-        padding: 20px 10px;
-    }
+	.accordeonhead {
+		padding: 20px 10px;
+	}
 
-    .accordeoncontent {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        padding: 0px 10px 10px;
-    }
-    
-    #dcha, #icono{
-        display: none;
-    }
-    .elemento .titulo {
-        font-size: 1rem;
-        padding: 0px 5px;
+	.accordeoncontent {
+		grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+		padding: 0px 10px 10px;
+	}
 
-    }
-    .accordeoncontent .elemento img {
-        width: calc(100% - 20px);
-        margin: 0px 10px;
-    }
-    
-	.elemento .parteabajofotos{
+	#dcha,
+	#icono {
+		display: none;
+	}
+	.elemento .titulo {
+		font-size: 1rem;
+		padding: 0px 5px;
+	}
+	.accordeoncontent .elemento img {
+		width: calc(100% - 20px);
+		margin: 0px 10px;
+	}
+
+	.elemento .parteabajofotos {
 		margin: 10px 10px;
 		width: calc(100% - 20px);
 	}
-	
-	.elemento .paginasleidas, .elemento .paginastotales{
+
+	.elemento .paginasleidas,
+	.elemento .paginastotales {
 		font-size: 1rem;
 		width: calc(50% - 10px - 0.5rem);
-        height: 1.25rem;
-        padding-inline: 5px;
-		
+		height: 1.25rem;
+		padding-inline: 5px;
 	}
-	.elemento .parteabajofotos h2{
+	.elemento .parteabajofotos h2 {
 		display: block;
 		width: 1rem;
 		font-size: 1rem;
 	}
-    #porcleido{
-        font-size: 24vw;
-    }
+	#porcleido {
+		font-size: 24vw;
+	}
 
-    #progresototalfuera .leidoytotal, .progresosagafuera .leidoytotal{
-        left: calc(0% + 13px);
-    }
+	#progresototalfuera .leidoytotal,
+	.progresosagafuera .leidoytotal {
+		left: calc(0% + 13px);
+	}
 }
 
-@media screen and (max-width: 950px) and (min-width: 551px){
-    main{
-        background-color: rgb(25, 22, 38);
-        padding: 138px 20px 20px;
-    }
+@media screen and (max-width: 950px) and (min-width: 551px) {
+	main {
+		background-color: rgb(25, 22, 38);
+		padding: 138px 20px 20px;
+	}
 
-    .accordeonhead{
-        padding: 20px;
-    }
+	.accordeonhead {
+		padding: 20px;
+	}
 
-    .accordeoncontent {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        padding: 0px 15px 15px;
-    }   
-    #dcha{
-        display: none;
-    }
-    /* Arreglar */
-    #icono{
-        flex: 1;
-        flex-grow: 0;
-        
-    }
+	.accordeoncontent {
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		padding: 0px 15px 15px;
+	}
+	#dcha {
+		display: none;
+	}
+	/* Arreglar */
+	#icono {
+		flex: 1;
+		flex-grow: 0;
+	}
 
-    .elemento .titulo {
-        font-size: 1.5rem;
-        padding: 0px 10px;
+	.elemento .titulo {
+		font-size: 1.5rem;
+		padding: 0px 10px;
+	}
 
-    }
+	.accordeoncontent .elemento img {
+		width: calc(100% - 30px);
+		margin: 0px 15px;
+	}
 
-    .accordeoncontent .elemento img {
-        width: calc(100% - 30px);
-        margin: 0px 15px;
-    }
+	.accordeonhead {
+		padding: 20px 15px;
+		cursor: pointer;
+	}
 
-    .accordeonhead{
-        padding: 20px 15px;
-        cursor: pointer;
-    }
-
-	.elemento .parteabajofotos{
+	.elemento .parteabajofotos {
 		margin: 10px 15px;
 		width: calc(100% - 30px);
 	}
-	
-	.elemento .paginasleidas, .elemento .paginastotales{
+
+	.elemento .paginasleidas,
+	.elemento .paginastotales {
 		font-size: 1.25rem;
 		width: calc(50% - 10px - 0.75rem);
-        padding-inline: 10px;
-        height: 1.5rem;
+		padding-inline: 10px;
+		height: 1.5rem;
 	}
 
-	.elemento .parteabajofotos h2{
+	.elemento .parteabajofotos h2 {
 		display: block;
 		font-size: 1.5rem;
 		padding: 0;
 		margin: 0;
 	}
 
-    #porcleido{
-        font-size: 21vw;
-    }
+	#porcleido {
+		font-size: 21vw;
+	}
 
-    #progresototalfuera .leidoytotal, .progresosagafuera .leidoytotal{
-        left: calc(0% + 23px);
-    }
+	#progresototalfuera .leidoytotal,
+	.progresosagafuera .leidoytotal {
+		left: calc(0% + 23px);
+	}
 }
 
-.accordeon:hover, .barracarga:hover, .elemento img:hover{
-    color: rgb(207, 164, 84);
-    border-color: rgb(207, 164, 84);
-    box-shadow: 0px 0px 5px 2px rgba(207, 164, 84, 0.5);
-    transition: 0.4s ease-in-out;
+.accordeon:hover,
+.barracarga:hover,
+.elemento img:hover {
+	color: rgb(207, 164, 84);
+	border-color: rgb(207, 164, 84);
+	box-shadow: 0px 0px 5px 2px rgba(207, 164, 84, 0.5);
+	transition: 0.4s ease-in-out;
 }
 
-.elemento{
-    margin-top: 15px;    
-    background-color: rgba(0, 0, 0, 0.247);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    transition: 0.5s;
+.elemento {
+	margin-top: 15px;
+	background-color: rgba(0, 0, 0, 0.247);
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	transition: 0.5s;
 }
 
-.titulo{
-    text-align: center;
-    font-size: 1.4rem;
-    font-family: "Anta";
-    margin-bottom: 1rem;
-    padding: 0px 25px;
-    margin-top: 25px;
-    height: auto;
-    flex: 1;
+.titulo {
+	text-align: center;
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
+	padding: 0px 25px;
+	margin-top: 25px;
+	height: auto;
+	flex: 1;
 }
 
 .elemento img {
-    width: calc(100% - 50px);
-    height: auto;
-    border-radius: 15px;
-    margin: 0px 25px;
+	width: calc(100% - 50px);
+	height: auto;
+	border-radius: 15px;
+	margin: 0px 25px;
 }
 
-.elemento img:hover{
-    transform: scale(1.02);
-    transition: 0.8s ease-in-out;
+.elemento img:hover {
+	transform: scale(1.02);
+	transition: 0.8s ease-in-out;
 }
 
-.parteabajofotos{
-    margin: 10px 25px;
+.parteabajofotos {
+	margin: 10px 25px;
 	width: calc(100% - 50px);
 	display: flex;
 	flex-wrap: nowrap;
 }
 
-.paginasleidas, .paginastotales{
-    background-color: rgba(208, 212, 216, 0);
+.paginasleidas,
+.paginastotales {
+	background-color: rgba(208, 212, 216, 0);
 	color: rgb(208, 212, 216);
-    font-family: "Anta";
-    font-size: 1.5rem;
+	font-family: "Anta";
+	font-size: 1.5rem;
 	width: calc(50% - 10px - 1rem);
-    height: 2rem;
+	height: 2rem;
 	border: none;
-    border-radius: 15px;
+	border-radius: 15px;
 	padding-inline: 10px;
 	flex-grow: 1;
-	
 }
-.parteabajofotos h2{
+.parteabajofotos h2 {
 	display: block;
 	width: 2rem;
 	font-size: 2rem;
@@ -285,62 +282,60 @@ Acordeon
 	display: block;
 }
 
-.paginasleidas{
-    text-align: right;
-    background-color: rgba(128, 128, 128, 0.5);
+.paginasleidas {
+	text-align: right;
+	background-color: rgba(128, 128, 128, 0.5);
 }
 
 /*
 barras
 */
 
-#progresototalfuera, .progresosagafuera{
-    font-family: "Anta";
-    font-size: 1.8rem;
-    text-align: left;
-    width: inherit;
-    background: linear-gradient(90deg, rgba(255, 31, 65, 0.6), rgb(255, 255, 95), rgb(63, 255, 63));
-    height: 36px;
-    border-radius: 100px;
-    border: 3px solid rgb(128, 128, 128);
-    display: flex;
-    justify-content: right;
-    overflow: hidden;
+#progresototalfuera,
+.progresosagafuera {
+	font-size: 1.8rem;
+	text-align: left;
+	width: inherit;
+	background: linear-gradient(90deg, rgba(255, 31, 65, 0.6), rgb(255, 255, 95), rgb(63, 255, 63));
+	height: 36px;
+	border-radius: 100px;
+	border: 3px solid rgb(128, 128, 128);
+	display: flex;
+	justify-content: right;
+	overflow: hidden;
 }
 
-#progresototaldentro, .progresosagadentro{
-    height: inherit;
-    color: rgb(255, 255, 255);
-    background: radial-gradient(circle at left center, transparent 18px, #191726 calc(18px - 100%));
-    border-radius: 0px 100px 100px 0px;
-    position: relative;
-
+#progresototaldentro,
+.progresosagadentro {
+	height: inherit;
+	color: rgb(255, 255, 255);
+	background: radial-gradient(circle at left center, transparent 18px, #191726 calc(18px - 100%));
+	border-radius: 0px 100px 100px 0px;
+	position: relative;
 }
 
-.progresoindividualfuera{
-    border: 3px solid rgb(128, 128, 128);
-    height: 24px;
-    background-color: rgba(129, 95, 95, 0.247);
-    border-radius: 100px;
-    overflow: hidden;
+.progresoindividualfuera {
+	border: 3px solid rgb(128, 128, 128);
+	height: 24px;
+	background-color: rgba(129, 95, 95, 0.247);
+	border-radius: 100px;
+	overflow: hidden;
 }
 
-.progresoindividualdentro{
-    width: 18px;
-    height: 100%;
-    color: white;
-    background-color: rgb(207, 164, 84);
-    box-shadow: 0px 0px 2px rgb(207, 164, 84);
-    border-radius: 100px;
+.progresoindividualdentro {
+	width: 18px;
+	height: 100%;
+	color: white;
+	background-color: rgb(207, 164, 84);
+	box-shadow: 0px 0px 2px rgb(207, 164, 84);
+	border-radius: 100px;
 }
 
-.leidoytotal{
-    position: absolute;
-    left: calc(0% + 33px);
-    padding: 0px 10px;
-    background-color: rgba(1,1,1,0.2);
-    flex: 0;
-    border-radius: 100px;
+.leidoytotal {
+	position: absolute;
+	left: calc(0% + 33px);
+	padding: 0px 10px;
+	background-color: rgba(1, 1, 1, 0.2);
+	flex: 0;
+	border-radius: 100px;
 }
-
-
