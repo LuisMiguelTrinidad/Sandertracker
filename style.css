@@ -144,8 +144,8 @@ Acordeon
         font-size: 24vw;
     }
 
-    .leidoytotal{
-        left: calc(0% + 13px) !important;
+    #progresototalfuera .leidoytotal, .progresosagafuera .leidoytotal{
+        left: calc(0% + 13px);
     }
 }
 
@@ -197,13 +197,12 @@ Acordeon
 	.elemento .paginasleidas, .elemento .paginastotales{
 		font-size: 1.25rem;
 		width: calc(50% - 10px - 0.75rem);
+        padding-inline: 10px;
         height: 1.5rem;
-        padding-inline: 5px;
-		
 	}
-	.parteabajofotos h2{
+
+	.elemento .parteabajofotos h2{
 		display: block;
-		width: 1.25rem;
 		font-size: 1.5rem;
 		padding: 0;
 		margin: 0;
@@ -213,9 +212,8 @@ Acordeon
         font-size: 21vw;
     }
 
-    .leidoytotal{
-        left: calc(0% + 23px) !important;
-
+    #progresototalfuera .leidoytotal, .progresosagafuera .leidoytotal{
+        left: calc(0% + 23px);
     }
 }
 
@@ -324,8 +322,6 @@ barras
     height: 24px;
     background-color: rgba(129, 95, 95, 0.247);
     border-radius: 100px;
-    outline: 3px;
-    box-sizing: border-box;
     overflow: hidden;
 }
 
