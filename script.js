@@ -17,109 +17,91 @@ document.addEventListener("DOMContentLoaded", function () {
 				i.firstElementChild.firstElementChild.textContent = "expand_more";
 			}
 		});
-		console.log(i.children[1]);
 		generabarrasaga(i.children[1]);
 	});
 
 	//Generamos la barra total
 	generabarracosmere();
 
+	let timer;
+
+	function startTimer(elemento) {
+		timer = setTimeout(() => {
+			if (Number(elemento.value) > Number(elemento.parentElement.children[2].value)) {
+				elemento.value = elemento.parentElement.children[2].value;
+			}
+			if (isNaN(Number(elemento.value))) {
+				elemento.value = 0;
+			}
+			generabarralibro(elemento);
+			generabarrasaga(elemento.parentElement.parentElement.parentElement);
+			generabarracosmere();
+			generacookie(
+				elemento.parentElement.previousElementSibling.previousElementSibling,
+				elemento,
+				elemento.parentElement.children[2]
+			);
+		}, 500);
+	}
+
+	function resetTimer() {
+		clearTimeout(timer);
+	}
+
+	function handleBlur(elemento) {
+		let input = Number(elemento.value);
+
+		let totalPages = Number(elemento.parentElement.children[2].value);
+
+		if (input > totalPages) {
+			input = totalPages;
+			totalPages = input;
+		}
+
+		if (isNaN(input)) {
+			input = 0;
+		}
+
+
+		console.log("paginas leidas " + input)
+		console.log("paginas totales " +totalPages)
+
+		generabarrasaga(elemento.parentElement.parentElement.parentElement);
+		generabarralibro(elemento);
+		generabarracosmere();
+		generacookie(elemento.parentElement.previousElementSibling.previousElementSibling, elemento, elemento.parentElement.children[2]);
+	}
+
 	//Funciones y event listeners para actualizar los datos de paginas leidas
 	document.querySelectorAll(".paginasleidas").forEach(i => {
-		let timer;
-
-		function startTimer() {
-			timer = setTimeout(() => {
-				if (Number(i.value) > Number(i.parentElement.children[2].value)) {
-					i.value = i.parentElement.children[2].value;
-				}
-				if (isNaN(Number(i.value))) {
-					i.value = 0;
-				}
-				generabarralibro(i);
-				generabarrasaga(i.parentElement.parentElement.parentElement);
-				generabarracosmere();
-				generacookie(
-					i.parentElement.previousElementSibling.previousElementSibling,
-					i,
-					i.parentElement.children[2]
-				);
-			}, 500);
-		}
-		function resetTimer() {
-			clearTimeout(timer);
-		}
-
 		i.addEventListener("keydown", function (event) {
 			if (event.key !== " ") {
 				if (!timer) {
-					startTimer();
+					startTimer(i);
 				} else {
 					resetTimer();
-					startTimer();
+					startTimer(i);
 				}
 			} else {
 				resetTimer();
 			}
+			i.addEventListener("blur", handleBlur(i));
 		});
-
-		function handleBlur(event) {
-			const input = event.target;
-			const totalPages = Number(input.parentElement.children[2].value);
-
-			if (Number(input.value) > totalPages) {
-				input.value = totalPages;
-			}
-
-			if (isNaN(Number(input.value))) {
-				input.value = 0;
-			}
-
-			generabarrasaga(i.parentElement.parentElement.parentElement);
-			generabarralibro(i);
-			generabarracosmere();
-			generacookie(i.parentElement.previousElementSibling.previousElementSibling, i, i.parentElement.children[2]);
-		}
-
-		i.addEventListener("blur", handleBlur);
-		i.parentElement.children[2].addEventListener("blur", handleBlur);
 	});
+
 	document.querySelectorAll(".paginastotales").forEach(i => {
-		let timer;
-
-		function startTimer() {
-			timer = setTimeout(() => {
-				if (Number(i.parentElement.children[0].value) > Number(i.value)) {
-					i.parentElement.children[0].value = i.value;
-				}
-				if (isNaN(Number(i.value))) {
-					i.value = 0;
-				}
-				generabarrasaga(i.parentElement.parentElement.parentElement);
-				generabarralibro(i);
-				generabarracosmere();
-				generacookie(
-					i.parentElement.previousElementSibling.previousElementSibling,
-					i,
-					i.parentElement.children[2]
-				);
-			}, 500);
-		}
-		function resetTimer() {
-			clearTimeout(timer);
-		}
-
 		i.addEventListener("keydown", function (event) {
 			if (event.key !== " ") {
 				if (!timer) {
-					startTimer();
+					startTimer(i.parentElement.children[0]);
 				} else {
 					resetTimer();
-					startTimer();
+					startTimer(i.parentElement.children[0]);
 				}
 			} else {
 				resetTimer();
 			}
+			i.addEventListener("blur", handleBlur(i.parentElement.children[0]));
 		});
 	});
 
