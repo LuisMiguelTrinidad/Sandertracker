@@ -72,6 +72,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		generacookie(elemento.parentElement.previousElementSibling.previousElementSibling, elemento, elemento.parentElement.children[2]);
 	}
 
+	window.addEventListener("resize", i => {
+		console.log("Hola")
+		document.querySelectorAll(".paginasleidas").forEach(j => {
+			generabarrasaga(j.parentElement.parentElement.parentElement);
+			generabarralibro(j);
+			generabarracosmere();
+			generacookie(j.parentElement.previousElementSibling.previousElementSibling, j, j.parentElement.children[2]);
+		})
+	})
+
 	//Funciones y event listeners para actualizar los datos de paginas leidas
 	document.querySelectorAll(".paginasleidas").forEach(i => {
 		i.addEventListener("keydown", function (event) {
