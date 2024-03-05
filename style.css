@@ -100,7 +100,7 @@ Acordeon
 	}
 
 	.accordeoncontent {
-		grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 		padding: 0px 10px 10px;
 	}
 
@@ -109,7 +109,7 @@ Acordeon
 		display: none;
 	}
 	.elemento .titulo {
-		font-size: 1rem;
+		font-size: 1.25rem;
 		padding: 0px 5px;
 		margin: 10px 0px;
 	}
