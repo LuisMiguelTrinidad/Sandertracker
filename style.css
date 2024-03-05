@@ -111,6 +111,7 @@ Acordeon
 	.elemento .titulo {
 		font-size: 1rem;
 		padding: 0px 5px;
+		margin: 10px 0px;
 	}
 	.accordeoncontent .elemento img {
 		width: calc(100% - 20px);
@@ -168,7 +169,8 @@ Acordeon
 	}
 
 	.elemento .titulo {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
+		margin: 10px 0px;
 		padding: 0px 10px;
 	}
 
@@ -231,13 +233,14 @@ Acordeon
 }
 
 .titulo {
-	text-align: center;
-	font-size: 1.4rem;
-	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	margin: 15px 0px;
 	padding: 0px 25px;
-	margin-top: 25px;
 	height: auto;
 	flex: 1;
+	display: grid;
+	text-align: center;
+	place-items: center;
 }
 
 .elemento img {
@@ -306,11 +309,7 @@ barras
 
 #progresototaldentro,
 .progresosagadentro {
-	height: inherit;
-	color: rgb(255, 255, 255);
-	background: radial-gradient(circle at left center, transparent 18px, #191726 calc(18px - 100%));
-	border-radius: 0px 100px 100px 0px;
-	position: relative;
+	background: radial-gradient(circle at left center, transparent 17px, #19172672 18px,#191726 calc(18px - 100%));
 }
 
 .progresoindividualfuera {
