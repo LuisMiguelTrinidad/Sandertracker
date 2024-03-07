@@ -1,14 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&display=swap");
+
+:root {
+	--fontcolor: rgb(208, 212, 216);
+	--bgcolor: rgb(23, 20, 34);
+	--header-elementbgcolor: rgba(7, 8, 12, 0.7);
+	--bordercolor: rgb(127,127,127);
+	--shadowcolor: rgb(63, 63, 63);
+	--bordercolorhover: rgb(217, 159, 92);
+}
+
+
 body {
 	font-size: 16px;
 	margin: 0;
-	color: rgb(208, 212, 216);
-	font-family: "Anta";
-	background-color: rgb(7, 8, 12);
+	color: var(--fontcolor);
+	font-family: "Anta";	
 }
 
 header {
-	background-color: rgba(7, 8, 12, 0.7);
+	background-color: var(--header-elementbgcolor);
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -24,14 +34,15 @@ header {
 #icono {
 	filter: invert(100%);
 	padding: 15px 0px;
+	height: 98px;
 }
 
 main {
-	background-color: rgb(25, 22, 38);
+	background-color: var(--bgcolor);
 	padding: 158px 30px 30px 30px;
 }
 h1 {
-	font-size: 3em;
+	font-size: 3rem;
 	margin: 0px;
 	padding: 0px;
 }
@@ -53,7 +64,7 @@ h3 {
 
 .material-icons {
 	font-size: 2rem;
-}
+}		
 
 /*
 titulo
@@ -63,8 +74,8 @@ titulo
 	font-size: 18vw;
 	text-align: center;
 	font-weight: bold;
-	text-shadow: 5px 5px 0px rgb(83, 83, 83), 4px 4px 0px rgb(83, 83, 83), 3px 3px 0px rgb(83, 83, 83),
-		2px 2px 0px rgb(83, 83, 83), 1px 1px 0px rgb(83, 83, 83);
+	text-shadow: 5px 5px 0px var(--shadowcolor), 4px 4px 0px var(--shadowcolor), 3px 3px 0px var(--shadowcolor),
+		2px 2px 0px var(--shadowcolor), 1px 1px 0px var(--shadowcolor);
 }
 
 /*
@@ -72,7 +83,7 @@ Acordeon
 */
 
 .accordeon {
-	border: 3px solid rgb(128, 128, 128);
+	border: 3px solid var(--bordercolor);
 	margin-bottom: 10px;
 	margin-top: 30px;
 }
@@ -91,8 +102,11 @@ Acordeon
 
 @media screen and (max-width: 550px) {
 	main {
-		background-color: rgb(25, 22, 38);
 		padding: 128px 10px 10px 10px;
+	}
+
+	header{
+		position: absolute;
 	}
 
 	.accordeonhead {
@@ -104,7 +118,10 @@ Acordeon
 		padding: 0px 10px 10px;
 	}
 
-	#dcha,
+	header #izq{
+		font-size: 2.5rem;
+	}
+
 	#icono {
 		display: none;
 	}
@@ -147,8 +164,11 @@ Acordeon
 
 @media screen and (max-width: 950px) and (min-width: 551px) {
 	main {
-		background-color: rgb(25, 22, 38);
 		padding: 138px 20px 20px;
+	}
+
+	header{
+		position: absolute;
 	}
 
 	.accordeonhead {
@@ -159,15 +179,7 @@ Acordeon
 		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 		padding: 0px 15px 15px;
 	}
-	#dcha {
-		display: none;
-	}
 	/* Arreglar */
-	#icono {
-		flex: 1;
-		flex-grow: 0;
-	}
-
 	.elemento .titulo {
 		font-size: 1.25rem;
 		margin: 10px 0px;
@@ -215,17 +227,16 @@ Acordeon
 }
 
 .accordeon:hover,
-.barracarga:hover,
 .elemento img:hover {
-	color: rgb(207, 164, 84);
-	border-color: rgb(207, 164, 84);
-	box-shadow: 0px 0px 5px 2px rgba(207, 164, 84, 0.5);
+	color: var(--bordercolorhover);
+	border-color: var(--bordercolorhover);
+	box-shadow: 0px 0px 10px -2px var(--bordercolorhover);
 	transition: 0.4s ease-in-out;
 }
 
 .elemento {
 	margin-top: 15px;
-	background-color: rgba(0, 0, 0, 0.247);
+	background-color: var(--header-elementbgcolor);
 	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
@@ -236,7 +247,6 @@ Acordeon
 	font-size: 1.5rem;
 	margin: 15px 0px;
 	padding: 0px 25px;
-	height: auto;
 	flex: 1;
 	display: grid;
 	text-align: center;
@@ -264,8 +274,8 @@ Acordeon
 
 .paginasleidas,
 .paginastotales {
-	background-color: rgba(208, 212, 216, 0);
-	color: rgb(208, 212, 216);
+	background-color: var(--bgcolor);
+	color: var(--fontcolor);
 	font-family: "Anta";
 	font-size: 1.5rem;
 	width: calc(50% - 10px - 1rem);
@@ -281,12 +291,11 @@ Acordeon
 	font-size: 2rem;
 	padding: 0;
 	margin: 0;
-	display: block;
 }
 
 .paginasleidas {
 	text-align: right;
-	background-color: rgba(128, 128, 128, 0.5);
+	background-color: rgba(127, 127, 127, 0.25);
 }
 
 /*
@@ -301,7 +310,7 @@ barras
 	background: linear-gradient(90deg, rgba(255, 31, 65, 0.6), rgb(255, 255, 95), rgb(63, 255, 63));
 	height: 36px;
 	border-radius: 100px;
-	border: 3px solid rgb(128, 128, 128);
+	border: 3px solid var(--bordercolor);
 	display: flex;
 	justify-content: right;
 	overflow: hidden;
@@ -313,19 +322,20 @@ barras
 }
 
 .progresoindividualfuera {
-	border: 3px solid rgb(128, 128, 128);
+	border: 3px solid var(--bordercolor);
 	height: 24px;
-	background-color: rgba(129, 95, 95, 0.247);
+	background-color: var(--header-elementbgcolor);
 	border-radius: 100px;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 .progresoindividualdentro {
 	width: 18px;
 	height: 100%;
-	color: white;
-	background-color: rgb(207, 164, 84);
-	box-shadow: 0px 0px 2px rgb(207, 164, 84);
+	color: var(--fontcolor);
+	background-color: var(--bordercolorhover);
+	box-shadow: 0px 0px 2px var(--bordercolorhover);
 	border-radius: 100px;
 }
 
@@ -333,7 +343,6 @@ barras
 	position: absolute;
 	left: calc(0% + 33px);
 	padding: 0px 10px;
-	background-color: rgba(1, 1, 1, 0.2);
-	flex: 0;
+	background-color: rgba(0, 0, 0, 0.25);
 	border-radius: 100px;
 }
